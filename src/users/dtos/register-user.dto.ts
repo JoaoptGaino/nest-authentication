@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, Min } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class RegisterUserDto {
   @IsNotEmpty({ message: "'name' is required" })
@@ -15,6 +15,9 @@ export class RegisterUserDto {
 
   @IsNotEmpty({ message: "'password' is required" })
   @IsString({ message: "'password' must be a string" })
-  @Min(6, { message: "'password' must have min 6 characters" })
   password: string;
+
+  // @IsNotEmpty({ message: "'roles' are required" })
+  // @IsEnum(Roles, { each: true })
+  // roles: Roles[];
 }

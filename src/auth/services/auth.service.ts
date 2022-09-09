@@ -33,6 +33,7 @@ export class AuthService {
     const payload: IPayload = {
       name: user.name,
       sub: user.id,
+      roles: user.roles,
     };
 
     return {
