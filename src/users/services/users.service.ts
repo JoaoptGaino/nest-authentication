@@ -86,7 +86,6 @@ export class UsersService {
     return new UserEntity(user);
   }
 
-  //TODO: user can't update roles, but admin can.
   async updateRoles(id: string, { roles }: UpdateRoleDto) {
     const user = await this.prismaService.user.update({
       where: { id },
